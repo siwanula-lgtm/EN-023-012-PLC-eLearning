@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Review Sheet 03 - ภาษาโปรแกรมและคำสั่งพื้นฐานของพีแอลซี</title>
+<link rel="stylesheet" href="sheet.css">
+</head>
+<body>
+<div class="toolbar"><button onclick="window.print()">🖨️ พิมพ์ / บันทึก PDF</button></div>
+<div class="page">
+
+  <div class="sheet-header">
+    <div>
+      <div class="title">⚙️ Review Sheet หน่วยที่ 3 — ภาษาโปรแกรมและคำสั่งพื้นฐานของพีแอลซี</div>
+      <div class="sub">EN-023-012 Programmable Logic Controller · PLC Programming Languages and Basic Instructions</div>
+    </div>
+    <div class="meta">
+      สัปดาห์ที่ 3–4 · ท 4 / ป 4 ชม. · CLO1, CLO2, CLO3<br>
+      ใบงานปฏิบัติ 2 ใบงาน
+    </div>
+  </div>
+
+  <div class="columns">
+    <div class="col">
+      <div class="section">
+        <div class="section-header"><span class="icon">📌</span> 1. สาระสำคัญ</div>
+        <div class="section-body">
+          <p>มาตรฐาน IEC 61131-3 กำหนดภาษาโปรแกรม PLC 5 ภาษา ได้แก่ Ladder Diagram (LD), Function Block Diagram (FBD), Structured Text (ST), Instruction List (IL) และ Sequential Function Chart (SFC) ภาษา Ladder เป็นที่นิยมที่สุดเพราะมีรูปแบบคล้ายวงจรรีเลย์ ประกอบด้วยรางไฟซ้ายขวา หน้าสัมผัส NO/NC เป็นเงื่อนไข และคอยล์เป็นผลลัพธ์ การต่อหน้าสัมผัสแบบอนุกรมให้ผลเป็นตรรกะ AND แบบขนานให้ผลเป็นตรรกะ OR คำสั่งพื้นฐานของ PLC Mitsubishi ได้แก่ LD, LDI, AND, ANI, OR, ORI, ANB, ORB, OUT และ END …</p>
+        </div>
+      </div>
+      <div class="section">
+        <div class="section-header"><span class="icon">🎯</span> 2. จุดประสงค์การเรียน (ทั่วไป)</div>
+        <div class="section-body">
+          <ul class="mini"><li>3.1 อธิบายภาษาโปรแกรม PLC ทั้ง 5 ภาษาตามมาตรฐาน IEC 61131-3 และองค์ประกอบของภาษา Ladder ได้</li><li>3.2 แปลงเงื่อนไขการทำงานเป็นสมการตรรกะ ตารางความจริง และโปรแกรม Ladder ได้</li><li>3.3 เขียนโปรแกรมด้วยคำสั่งพื้นฐาน LD, LDI, AND, ANI, OR, ORI, ANB, ORB และ OUT ได้</li><li>3.4 ออกแบบวงจรอินเตอร์ล็อกและวงจรคงสถานะสำหรับควบคุมเครื่องจักรได้</li></ul>
+        </div>
+      </div>
+      <div class="section">
+        <div class="section-header"><span class="icon">🧩</span> 3. หัวข้อเนื้อหาในหน่วย</div>
+        <div class="section-body">
+          <ul class="mini"><li>3.1 ภาษาโปรแกรมของพีแอลซีตามมาตรฐาน IEC 61131-3</li><li>3.2 โครงสร้างและสัญลักษณ์ของภาษาแลดเดอร์</li><li>3.3 ตรรกะพื้นฐานและการแปลงเป็นโปรแกรมแลดเดอร์</li><li>3.4 คำสั่งพื้นฐานของพีแอลซี Mitsubishi</li><li>3.5 วงจรอินเตอร์ล็อก</li><li>3.6 วงจรคงสถานะ</li></ul>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="section">
+        <div class="section-header"><span class="icon">📝</span> 4. บทสรุป</div>
+        <div class="section-body">
+          <p>IEC 61131-3 มี 5 ภาษา: LD, FBD, ST, IL, SFC รายวิชานี้ใช้ LD เป็นหลัก Ladder: อนุกรม = AND ขนาน = OR หน้าสัมผัส NC = NOT คอยล์อยู่ขวาสุด หลีกเลี่ยง Double coil คำสั่งพื้นฐาน: LD, LDI, AND, ANI, OR, ORI, ANB, ORB, OUT, END Input Interlock ใช้ NC ของปุ่มอีกตัว · Output Interlock ใช้ NC ของเอาต์พุตอีกตัว Self-holding: Y = (START + Y)·S̅T̅O̅P̅ (หยุดมีความสำคัญกว่า) ปุ่ม STOP ต่อแบบ NC (Fail-safe)</p>
+        </div>
+      </div>
+      <div class="section">
+        <div class="section-header"><span class="icon">❓</span> 5. คำถามทบทวน (จากแบบฝึกหัดท้ายหน่วย)</div>
+        <div class="section-body">
+          <ul class="mini"><li>จงเปรียบเทียบภาษาโปรแกรม PLC ตามมาตรฐาน IEC 61131-3 ทั้ง 5 ภาษา พร้อมบอกงานที่เหมาะสม</li><li>เครื่องอัดชิ้นงานต้องทำงาน (Y6) เมื่อกดปุ่มสองมือ X3 และ X4 พร้อมกัน และประตูนิรภัยปิด (X5 = 1) …</li><li>จงลดรูปสมการ Y = A·B + A·B̅ + A̅·B แล้วเขียนเป็น Ladder</li><li>หลอดเตือน Y4 ต้องติดเมื่อประตูเปิด (X5 = 0) หรือเมื่อแรงดันลมต่ำ (X6 = 1) ขณะเครื่องทำงาน (Y1 = 1) …</li><li>จงเขียนรายการคำสั่งของสมการ Y1 = X3·X4 + X5·X6</li><li>จงเขียนรายการคำสั่งของสมการ Y3 = (X3 + X4)·(X5 + X̅6)</li></ul>
+        </div>
+      </div>
+      <div class="section">
+        <div class="section-header"><span class="icon">🔧</span> 6. เชื่อมโยงกับใบงานปฏิบัติหน่วยเรียนที่ 3</div>
+        <div class="section-body">
+          <p><span class="accent">การเขียนโปรแกรมวงจรอินเตอร์ล็อกด้านอินพุต (Input Interlock) และด้านเอาต์พุต (Output Interlock) / การเขียนโปรแกรมวงจรคงสถานะ (Self-holding) แบบหยุดมีความสำคัญกว่าและแบบเริ่มมีความสำคัญกว่า</span><br>เวลาปฏิบัติ 4 ชั่วโมง · ทำแบบทดสอบหลังเรียนหน่วยที่ 3 หลังทบทวน</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">EN-023-012 โปรแกรมเมเบิล ลอจิก คอนโทรลเลอร์ · อาจารย์ศิวณุ เหล่าบุตรสา · หลักสูตรวิศวกรรมศาสตรบัณฑิต สาขาวิชาวิศวกรรมเครื่องกล มหาวิทยาลัยกาฬสินธุ์ · ภาคการศึกษาที่ 1</div>
+</div>
+</body>
+</html>

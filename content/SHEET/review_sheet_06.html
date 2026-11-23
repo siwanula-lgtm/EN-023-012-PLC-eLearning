@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Review Sheet 06 - เคาน์เตอร์ รีจิสเตอร์ข้อมูล และคำสั่งเปรียบเทียบ</title>
+<link rel="stylesheet" href="sheet.css">
+</head>
+<body>
+<div class="toolbar"><button onclick="window.print()">🖨️ พิมพ์ / บันทึก PDF</button></div>
+<div class="page">
+
+  <div class="sheet-header">
+    <div>
+      <div class="title">⚙️ Review Sheet หน่วยที่ 6 — เคาน์เตอร์ รีจิสเตอร์ข้อมูล และคำสั่งเปรียบเทียบ</div>
+      <div class="sub">EN-023-012 Programmable Logic Controller · Counters, Data Registers and Comparison Instructions</div>
+    </div>
+    <div class="meta">
+      สัปดาห์ที่ 9 · ท 2 / ป 2 ชม. · CLO1, CLO2, CLO3, CLO4<br>
+      ใบงานปฏิบัติ 1 ใบงาน
+    </div>
+  </div>
+
+  <div class="columns">
+    <div class="col">
+      <div class="section">
+        <div class="section-header"><span class="icon">📌</span> 1. สาระสำคัญ</div>
+        <div class="section-body">
+          <p>เคาน์เตอร์ของ PLC ใช้นับจำนวนเหตุการณ์ เช่น จำนวนชิ้นงานที่ผ่านเซนเซอร์ จำนวนรอบการทำงานของเครื่องจักร หรือจำนวนครั้งที่กดปุ่ม เคาน์เตอร์นับหนึ่งครั้งเมื่อเงื่อนไขเปลี่ยนจาก OFF เป็น ON (ขอบขาขึ้น) เมื่อค่าปัจจุบันถึงค่าตั้ง หน้าสัมผัสของเคาน์เตอร์จะเป็น ON ค้างจนกว่าจะสั่ง RST PLC FX5 มีเคาน์เตอร์ 16 บิต (C) เคาน์เตอร์ 32 บิต (LC) และเคาน์เตอร์ความเร็วสูงสำหรับสัญญาณจากเอนโคเดอร์ นอกจากนี้ค่าตัวเลขในโปรแกรม เช่น ค่าตั้งที่ปรับได้หรือค่าที่นับได้ เก็บในรีจิสเตอร์ข้อมูล (D) และจัดการด้วยคำสั่งย้ายข้อมูล (MOV) …</p>
+        </div>
+      </div>
+      <div class="section">
+        <div class="section-header"><span class="icon">🎯</span> 2. จุดประสงค์การเรียน (ทั่วไป)</div>
+        <div class="section-body">
+          <ul class="mini"><li>6.1 อธิบายหลักการทำงานและชนิดของเคาน์เตอร์ใน PLC ได้</li><li>6.2 เขียนโปรแกรมนับจำนวนและรีเซ็ตเคาน์เตอร์ได้ถูกต้อง</li><li>6.3 ใช้รีจิสเตอร์ข้อมูล คำสั่ง MOV และคำสั่งเปรียบเทียบในการควบคุมได้</li><li>6.4 ประยุกต์เคาน์เตอร์ร่วมกับไทเมอร์ในงานนับชิ้นงานและงานบรรจุได้</li></ul>
+        </div>
+      </div>
+      <div class="section">
+        <div class="section-header"><span class="icon">🧩</span> 3. หัวข้อเนื้อหาในหน่วย</div>
+        <div class="section-body">
+          <ul class="mini"><li>6.1 หลักการทำงานของเคาน์เตอร์</li><li>6.2 รีจิสเตอร์ข้อมูลและคำสั่งจัดการข้อมูล</li><li>6.3 การประยุกต์เคาน์เตอร์ร่วมกับไทเมอร์</li></ul>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="section">
+        <div class="section-header"><span class="icon">📝</span> 4. บทสรุป</div>
+        <div class="section-body">
+          <p>เคาน์เตอร์นับที่ขอบขาขึ้น ครบค่าตั้งหน้าสัมผัส ON ค้าง ค่าไม่เกินค่าตั้ง ล้างด้วย RST C = 16 บิต (สูงสุด 32,767) · LC = 32 บิต · High-speed counter สำหรับเอนโคเดอร์ D = รีจิสเตอร์ข้อมูล 16 บิต · MOV ย้ายข้อมูล · ADD/SUB/MUL/DIV/INC/DEC คำนวณ คำสั่งเปรียบเทียบ LD=, LD&gt;, LD&lt; ใช้ตัดสินใจจากค่าตัวเลข งานประยุกต์: นับชิ้นงานลงกล่อง เปลี่ยนกล่องด้วยไทเมอร์ นับรอบบำรุงรักษา ป้องกันการนับผิด</p>
+        </div>
+      </div>
+      <div class="section">
+        <div class="section-header"><span class="icon">❓</span> 5. คำถามทบทวน (จากแบบฝึกหัดท้ายหน่วย)</div>
+        <div class="section-body">
+          <ul class="mini"><li>จงอธิบายการทำงานของเคาน์เตอร์ OUT C0 K5 เมื่อกดปุ่มนับ 7 ครั้งโดยไม่รีเซ็ต</li><li>จงเขียนโปรแกรมให้ LAMP G (Y1) ติดเมื่อกด PBG (X3) ครบ 10 ครั้ง และรีเซ็ตด้วย PBY (X4)</li><li>จงอธิบายเหตุผลที่ต้องเลือกใช้เคาน์เตอร์ 32 บิตและเคาน์เตอร์ความเร็วสูง พร้อมยกตัวอย่างงาน</li><li>จงวาดผังเวลาของ X3 (นับ), X4 (รีเซ็ต), ค่าปัจจุบัน C0 (K3) และหน้าสัมผัส C0 เมื่อกด X3 4 ครั้งแล้วกด X4</li><li>จงเขียนโปรแกรมให้เก็บค่าตั้ง 24 ลงใน D10 เมื่อเริ่ม RUN และใช้ D10 เป็นค่าตั้งของเคาน์เตอร์ C0 ที่นับสัญญาณ X7</li><li>จงเขียนโปรแกรมให้หลอดเหลือง (Y3) ติดเมื่อนับชิ้นงานได้ 20–23 ชิ้น (ใกล้ครบ) และหลอดเขียว (Y1) ติดเมื่อครบ 24 …</li></ul>
+        </div>
+      </div>
+      <div class="section">
+        <div class="section-header"><span class="icon">🔧</span> 6. เชื่อมโยงกับใบงานปฏิบัติหน่วยเรียนที่ 6</div>
+        <div class="section-body">
+          <p><span class="accent">การใช้เคาน์เตอร์ (Counter) นับจำนวนครั้งและการรีเซ็ตค่า ร่วมกับไทเมอร์ในงานนับชิ้นงาน</span><br>เวลาปฏิบัติ 2 ชั่วโมง · ทำแบบทดสอบหลังเรียนหน่วยที่ 6 หลังทบทวน</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">EN-023-012 โปรแกรมเมเบิล ลอจิก คอนโทรลเลอร์ · อาจารย์ศิวณุ เหล่าบุตรสา · หลักสูตรวิศวกรรมศาสตรบัณฑิต สาขาวิชาวิศวกรรมเครื่องกล มหาวิทยาลัยกาฬสินธุ์ · ภาคการศึกษาที่ 1</div>
+</div>
+</body>
+</html>

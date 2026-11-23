@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Review Sheet 01 - หลักการและที่มาของโปรแกรมเมเบิลลอจิกคอนโทรลเลอร์</title>
+<link rel="stylesheet" href="sheet.css">
+</head>
+<body>
+<div class="toolbar"><button onclick="window.print()">🖨️ พิมพ์ / บันทึก PDF</button></div>
+<div class="page">
+
+  <div class="sheet-header">
+    <div>
+      <div class="title">⚙️ Review Sheet หน่วยที่ 1 — หลักการและที่มาของโปรแกรมเมเบิลลอจิกคอนโทรลเลอร์</div>
+      <div class="sub">EN-023-012 Programmable Logic Controller · Principles and Background of Programmable Logic Controllers</div>
+    </div>
+    <div class="meta">
+      สัปดาห์ที่ 1 · ท 2 / ป 2 ชม. · CLO1, CLO3, CLO4<br>
+      ใบงานปฏิบัติ 1 ใบงาน
+    </div>
+  </div>
+
+  <div class="columns">
+    <div class="col">
+      <div class="section">
+        <div class="section-header"><span class="icon">📌</span> 1. สาระสำคัญ</div>
+        <div class="section-body">
+          <p>ระบบอัตโนมัติในงานวิศวกรรมเครื่องกลประกอบด้วยอุปกรณ์ตรวจจับ ตัวควบคุม และอุปกรณ์ทำงาน ก่อนมีพีแอลซี เครื่องจักรควบคุมด้วยวงจรรีเลย์ซึ่งต้องเดินสายใหม่ทุกครั้งที่เปลี่ยนเงื่อนไข โปรแกรมเมเบิลลอจิกคอนโทรลเลอร์ (Programmable Logic Controller: PLC) จึงถูกพัฒนาขึ้นในปี ค.ศ. 1968–1969 ตามข้อกำหนดของอุตสาหกรรมยานยนต์ เพื่อแทนวงจรรีเลย์ด้วยอุปกรณ์ที่แก้ไขการทำงานได้ด้วยโปรแกรม PLC ทำงานเป็นวงรอบสแกน คือ อ่านอินพุต ประมวลผลโปรแกรม และส่งเอาต์พุตซ้ำต่อเนื่อง จัดอยู่ในระดับควบคุมของพีระมิดระบบอัตโนมัติ …</p>
+        </div>
+      </div>
+      <div class="section">
+        <div class="section-header"><span class="icon">🎯</span> 2. จุดประสงค์การเรียน (ทั่วไป)</div>
+        <div class="section-body">
+          <ul class="mini"><li>1.1 อธิบายองค์ประกอบของระบบควบคุมอัตโนมัติและตำแหน่งของ PLC ในพีระมิดระบบอัตโนมัติได้</li><li>1.2 อธิบายที่มาและวิวัฒนาการของ PLC จากวงจรรีเลย์จนถึงปัจจุบันได้</li><li>1.3 อธิบายหลักการทำงานแบบวงรอบสแกนและเปรียบเทียบ PLC กับตัวควบคุมแบบอื่นได้</li><li>1.4 ใช้งานชุดฝึก PLC และซอฟต์แวร์ GX Works3 ในขั้นพื้นฐานได้อย่างปลอดภัย</li></ul>
+        </div>
+      </div>
+      <div class="section">
+        <div class="section-header"><span class="icon">🧩</span> 3. หัวข้อเนื้อหาในหน่วย</div>
+        <div class="section-body">
+          <ul class="mini"><li>1.1 ระบบควบคุมอัตโนมัติในงานวิศวกรรมเครื่องกล</li><li>1.2 ที่มาและวิวัฒนาการของพีแอลซี</li><li>1.3 ความหมาย ข้อดี และข้อจำกัดของพีแอลซี</li><li>1.4 หลักการทำงานของพีแอลซีแบบวงรอบสแกน</li><li>1.5 ชุดฝึก PLC และซอฟต์แวร์ GX Works3</li></ul>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="section">
+        <div class="section-header"><span class="icon">📝</span> 4. บทสรุป</div>
+        <div class="section-body">
+          <p>ระบบควบคุมอัตโนมัติ = เซนเซอร์ + ตัวควบคุม + อุปกรณ์ทำงาน + กระบวนการ PLC อยู่ระดับควบคุมของพีระมิด PLC กำเนิดจากข้อกำหนดของ General Motors ปี ค.ศ. 1968 (Modicon 084) เพื่อแทนตู้รีเลย์ ข้อดีหลัก: แก้ไขด้วยโปรแกรม ลดสายไฟ มีไทเมอร์/เคาน์เตอร์ ตรวจสอบง่าย สื่อสารได้ · ข้อจำกัด: ต้นทุนงานเล็ก ความรู้ด้านโปรแกรม วงรอบสแกน: อ่านอินพุต → ประมวลผล → ส่งเอาต์พุต สัญญาณที่สั้นกว่าเวลาสแกนอาจหลุด ชุดฝึก FX5UJ-24MT/ES: X0–X7, Y0–Y7 ตามตารางมาตรฐาน ปลดเบรกเกอร์ทุกครั้งก่อนต่อสาย</p>
+        </div>
+      </div>
+      <div class="section">
+        <div class="section-header"><span class="icon">❓</span> 5. คำถามทบทวน (จากแบบฝึกหัดท้ายหน่วย)</div>
+        <div class="section-body">
+          <ul class="mini"><li>จงอธิบายองค์ประกอบ 4 ส่วนของระบบควบคุมอัตโนมัติ พร้อมยกตัวอย่างอุปกรณ์จากเครื่องบรรจุขวดอัตโนมัติ</li><li>จงเปรียบเทียบระบบควบคุมแบบวงเปิดและวงปิด พร้อมยกตัวอย่างในงานวิศวกรรมเครื่องกลอย่างละ 1 ตัวอย่าง</li><li>จงเรียงลำดับระดับชั้นของพีระมิดระบบอัตโนมัติจากล่างขึ้นบน และระบุว่า PLC และ HMI อยู่ระดับใด</li><li>จงอธิบายข้อกำหนดของ General Motors ปี ค.ศ. 1968 อย่างน้อย 4 ข้อ ที่นำไปสู่การกำเนิด PLC</li><li>จงเปรียบเทียบการควบคุมด้วยวงจรรีเลย์และการควบคุมด้วย PLC อย่างน้อย 4 ประเด็น</li><li>จงอธิบายการทำงานในหนึ่งรอบสแกนของ PLC ตามลำดับ</li></ul>
+        </div>
+      </div>
+      <div class="section warn">
+        <div class="section-header"><span class="icon">⚠️</span> ข้อควรระวังด้านความปลอดภัย (ใบงานปฏิบัติ)</div>
+        <div class="section-body">
+          <ul class="mini"><li>ชี้แจงคำอธิบายรายวิชา ผลลัพธ์การเรียนรู้ (CLO) เกณฑ์การประเมิน และกฎความปลอดภัยในห้องปฏิบัติการ</li></ul>
+        </div>
+      </div>
+      <div class="section">
+        <div class="section-header"><span class="icon">🔧</span> 6. เชื่อมโยงกับใบงานปฏิบัติหน่วยเรียนที่ 1</div>
+        <div class="section-body">
+          <p><span class="accent">การสำรวจชุดฝึก PLC FX5UJ-24MT/ES การตรวจวัดแหล่งจ่ายไฟ และการเชื่อมต่อ PLC กับซอฟต์แวร์ GX Works3</span><br>เวลาปฏิบัติ 2 ชั่วโมง · ทำแบบทดสอบหลังเรียนหน่วยที่ 1 หลังทบทวน</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">EN-023-012 โปรแกรมเมเบิล ลอจิก คอนโทรลเลอร์ · อาจารย์ศิวณุ เหล่าบุตรสา · หลักสูตรวิศวกรรมศาสตรบัณฑิต สาขาวิชาวิศวกรรมเครื่องกล มหาวิทยาลัยกาฬสินธุ์ · ภาคการศึกษาที่ 1</div>
+</div>
+</body>
+</html>

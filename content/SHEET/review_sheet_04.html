@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Review Sheet 04 - รีเลย์ภายใน รีเลย์พิเศษ และคำสั่ง SET/RST</title>
+<link rel="stylesheet" href="sheet.css">
+</head>
+<body>
+<div class="toolbar"><button onclick="window.print()">🖨️ พิมพ์ / บันทึก PDF</button></div>
+<div class="page">
+
+  <div class="sheet-header">
+    <div>
+      <div class="title">⚙️ Review Sheet หน่วยที่ 4 — รีเลย์ภายใน รีเลย์พิเศษ และคำสั่ง SET/RST</div>
+      <div class="sub">EN-023-012 Programmable Logic Controller · Internal Relays, Special Relays and SET/RST Instructions</div>
+    </div>
+    <div class="meta">
+      สัปดาห์ที่ 5–6 · ท 4 / ป 4 ชม. · CLO1, CLO2, CLO3, CLO4<br>
+      ใบงานปฏิบัติ 2 ใบงาน
+    </div>
+  </div>
+
+  <div class="columns">
+    <div class="col">
+      <div class="section">
+        <div class="section-header"><span class="icon">📌</span> 1. สาระสำคัญ</div>
+        <div class="section-body">
+          <p>นอกจากอินพุต X และเอาต์พุต Y แล้ว PLC มีอุปกรณ์บิตภายในหน่วยความจำสำหรับใช้ในโปรแกรม ได้แก่ รีเลย์ภายใน (M) ซึ่งใช้เก็บสถานะกลางของโปรแกรม รีเลย์คงค่า (L) ซึ่งจำสถานะไว้แม้ไฟฟ้าดับ และรีเลย์พิเศษ (SM) ซึ่งระบบกำหนดหน้าที่ไว้แล้ว เช่น SM400 เป็น ON ตลอด SM402 เป็น ON เฉพาะรอบสแกนแรก และ SM412 เป็นนาฬิกาคาบ 1 วินาที คำสั่ง SET ตั้งบิตให้เป็น ON ค้างไว้ และคำสั่ง RST ล้างบิตเป็น OFF ใช้แทนวงจรคงสถานะได้ ส่วนคำสั่ง PLS และ PLF สร้างพัลส์หนึ่งรอบสแกนที่ขอบขาขึ้นและขอบขาลงของสัญญาณ …</p>
+        </div>
+      </div>
+      <div class="section">
+        <div class="section-header"><span class="icon">🎯</span> 2. จุดประสงค์การเรียน (ทั่วไป)</div>
+        <div class="section-body">
+          <ul class="mini"><li>4.1 อธิบายหน้าที่และความแตกต่างของรีเลย์ภายใน M รีเลย์คงค่า L และรีเลย์พิเศษ SM ได้</li><li>4.2 เขียนโปรแกรมควบคุมด้วยคำสั่ง SET, RST, ZRST, PLS และ PLF ได้</li><li>4.3 ใช้รีเลย์พิเศษสร้างสัญญาณกะพริบ สัญญาณเริ่มต้น และวงจรแจ้งเตือนได้</li><li>4.4 ออกแบบโปรแกรมแจ้งเตือนเหตุฉุกเฉินและการเลือกโหมดการทำงานที่ปลอดภัยได้</li></ul>
+        </div>
+      </div>
+      <div class="section">
+        <div class="section-header"><span class="icon">🧩</span> 3. หัวข้อเนื้อหาในหน่วย</div>
+        <div class="section-body">
+          <ul class="mini"><li>4.1 อุปกรณ์บิตภายในหน่วยความจำของพีแอลซี</li><li>4.2 รีเลย์พิเศษ (Special relay: SM)</li><li>4.3 คำสั่ง SET, RST และ ZRST</li><li>4.4 คำสั่งตรวจจับขอบสัญญาณ PLS และ PLF</li><li>4.5 การออกแบบวงจรแจ้งเตือนและหยุดฉุกเฉิน</li></ul>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="section">
+        <div class="section-header"><span class="icon">📝</span> 4. บทสรุป</div>
+        <div class="section-body">
+          <p>M = รีเลย์ภายใน (ค่าหายเมื่อไฟดับ) L = รีเลย์คงค่า SM = รีเลย์พิเศษที่ระบบกำหนดหน้าที่ SM400 ON ตลอด · SM402 ON รอบแรก · SM412 นาฬิกา 1 วินาที · SM5500 แกนที่ 1 กำลังทำงาน SET ตั้งบิตค้าง RST ล้างบิต/ไทเมอร์/เคาน์เตอร์ ZRST ล้างเป็นช่วง แถวหลังสุดชนะเมื่อทำงานพร้อมกัน PLS = พัลส์ขอบขาขึ้น PLF = พัลส์ขอบขาลง ใช้กับวงจร Toggle และงานหนึ่งครั้งต่อการกด สวิตช์หยุดฉุกเฉินต่อแบบ NC ใช้ LDI X0 แจ้งเตือน ใช้ LD X0 อนุกรมในแถวเริ่มงาน คลายแล้วต้องไม่เริ่มเอง</p>
+        </div>
+      </div>
+      <div class="section">
+        <div class="section-header"><span class="icon">❓</span> 5. คำถามทบทวน (จากแบบฝึกหัดท้ายหน่วย)</div>
+        <div class="section-body">
+          <ul class="mini"><li>จงเปรียบเทียบอุปกรณ์ X, Y, M, L และ SM ในด้านการเชื่อมต่อภายนอกและค่าเมื่อไฟดับ</li><li>จงอธิบายข้อดีของการใช้รีเลย์ภายในเป็นตัวกลางแทนการเขียนเงื่อนไขซ้ำที่ทุกเอาต์พุต</li><li>จงเขียนโปรแกรมให้ M10 เก็บสถานะ RUN (START = X3, STOP = X4 ต่อแบบ NO) และ LAMP Y (Y3) ติดเมื่อ RUN …</li><li>จงอธิบายหน้าที่ของ SM400, SM402 และ SM412 พร้อมยกตัวอย่างการใช้งานอย่างละ 1 ตัวอย่าง</li><li>ถ้าเขียน LD X3 SET Y1 ไว้ที่แถวที่ 5 และ LD X4 RST Y1 ไว้ที่แถวที่ 2 เมื่อกด X3 และ X4 พร้อมกัน Y1 …</li><li>จงเขียนโปรแกรมวงจร Toggle ให้ปุ่ม X3 กดครั้งแรก Y1 ติด กดครั้งที่สอง Y1 ดับ</li></ul>
+        </div>
+      </div>
+      <div class="section">
+        <div class="section-header"><span class="icon">🔧</span> 6. เชื่อมโยงกับใบงานปฏิบัติหน่วยเรียนที่ 4</div>
+        <div class="section-body">
+          <p><span class="accent">การใช้รีเลย์ภายใน (Internal Relay: M) เป็นตัวกลางในการเขียนโปรแกรมควบคุมและโหมดการทำงาน / การเขียนโปรแกรมแจ้งเตือนเหตุฉุกเฉินด้วยรีเลย์พิเศษ (SM412) และการควบคุมด้วยคำสั่ง SET/RST</span><br>เวลาปฏิบัติ 4 ชั่วโมง · ทำแบบทดสอบหลังเรียนหน่วยที่ 4 หลังทบทวน</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">EN-023-012 โปรแกรมเมเบิล ลอจิก คอนโทรลเลอร์ · อาจารย์ศิวณุ เหล่าบุตรสา · หลักสูตรวิศวกรรมศาสตรบัณฑิต สาขาวิชาวิศวกรรมเครื่องกล มหาวิทยาลัยกาฬสินธุ์ · ภาคการศึกษาที่ 1</div>
+</div>
+</body>
+</html>

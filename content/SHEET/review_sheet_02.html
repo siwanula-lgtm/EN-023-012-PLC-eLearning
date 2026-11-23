@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Review Sheet 02 - ชนิด โครงสร้าง และส่วนประกอบของพีแอลซี</title>
+<link rel="stylesheet" href="sheet.css">
+</head>
+<body>
+<div class="toolbar"><button onclick="window.print()">🖨️ พิมพ์ / บันทึก PDF</button></div>
+<div class="page">
+
+  <div class="sheet-header">
+    <div>
+      <div class="title">⚙️ Review Sheet หน่วยที่ 2 — ชนิด โครงสร้าง และส่วนประกอบของพีแอลซี</div>
+      <div class="sub">EN-023-012 Programmable Logic Controller · Types, Structures and Components of PLCs</div>
+    </div>
+    <div class="meta">
+      สัปดาห์ที่ 2 · ท 2 / ป 2 ชม. · CLO1, CLO3, CLO4<br>
+      ใบงานปฏิบัติ 1 ใบงาน
+    </div>
+  </div>
+
+  <div class="columns">
+    <div class="col">
+      <div class="section">
+        <div class="section-header"><span class="icon">📌</span> 1. สาระสำคัญ</div>
+        <div class="section-body">
+          <p>PLC จำแนกตามโครงสร้างได้เป็นแบบคอมแพกต์ (Compact) ซึ่งรวม CPU แหล่งจ่ายไฟ และอินพุต/เอาต์พุตไว้ในตัวเดียว และแบบโมดูลาร์ (Modular) ซึ่งประกอบโมดูลแยกบนแร็กหรือเบส ส่วนประกอบหลักของ PLC ได้แก่ แหล่งจ่ายไฟ หน่วยประมวลผลกลาง หน่วยความจำ หน่วยอินพุต หน่วยเอาต์พุต และพอร์ตสื่อสาร หน่วยอินพุตแปลงสัญญาณจากสวิตช์และเซนเซอร์ให้เป็นระดับสัญญาณภายในโดยแยกทางไฟฟ้าด้วยออปโตคัปเปลอร์ ต่อได้ทั้งแบบ Sink และ Source ส่วนหน่วยเอาต์พุตมีทั้งแบบรีเลย์ ทรานซิสเตอร์ และไทรแอก ซึ่งเหมาะกับโหลดต่างกัน PLC Mitsubishi FX5UJ-24MT/ES …</p>
+        </div>
+      </div>
+      <div class="section">
+        <div class="section-header"><span class="icon">🎯</span> 2. จุดประสงค์การเรียน (ทั่วไป)</div>
+        <div class="section-body">
+          <ul class="mini"><li>2.1 จำแนกชนิดของ PLC ตามโครงสร้างและขนาด และเลือกชนิดให้เหมาะกับงานได้</li><li>2.2 อธิบายหน้าที่ของส่วนประกอบหลักของ PLC และชนิดของหน่วยความจำได้</li><li>2.3 อธิบายวงจรอินพุตแบบ Sink/Source และวงจรเอาต์พุตแบบรีเลย์ ทรานซิสเตอร์ และไทรแอกได้</li><li>2.4 ต่อวงจรอินพุต/เอาต์พุตของ FX5UJ-24MT/ES และเขียนโปรแกรมทดสอบได้ถูกต้อง</li></ul>
+        </div>
+      </div>
+      <div class="section">
+        <div class="section-header"><span class="icon">🧩</span> 3. หัวข้อเนื้อหาในหน่วย</div>
+        <div class="section-body">
+          <ul class="mini"><li>2.1 ชนิดของพีแอลซี</li><li>2.2 ส่วนประกอบหลักของพีแอลซี</li><li>2.3 พีแอลซี Mitsubishi FX5UJ-24MT/ES</li><li>2.4 วงจรอินพุตของพีแอลซี</li><li>2.5 วงจรเอาต์พุตของพีแอลซี</li><li>2.6 การต่อวงจรอินพุต/เอาต์พุตของชุดฝึก</li></ul>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="section">
+        <div class="section-header"><span class="icon">📝</span> 4. บทสรุป</div>
+        <div class="section-body">
+          <p>PLC แบบคอมแพกต์รวมทุกส่วนในตัวเดียว แบบโมดูลาร์แยกโมดูลบนแร็ก ขยายและซ่อมบำรุงง่าย ส่วนประกอบ: แหล่งจ่ายไฟ CPU หน่วยความจำ (โปรแกรม/ข้อมูล) อินพุต เอาต์พุต พอร์ตสื่อสาร FX5UJ-24MT/ES: อินพุต 14 จุด เอาต์พุตทรานซิสเตอร์ Sink 10 จุด หมายเลข X/Y ฐานแปด Sink input: S/S ต่อ +24 V ใช้กับสวิตช์และ NPN · Source input: S/S ต่อ 0 V ใช้กับ PNP เอาต์พุต: รีเลย์ (AC/DC, 2 A, ช้า) ทรานซิสเตอร์ (DC, เร็ว, พัลส์) ไทรแอก (AC, เร็ว)</p>
+        </div>
+      </div>
+      <div class="section">
+        <div class="section-header"><span class="icon">❓</span> 5. คำถามทบทวน (จากแบบฝึกหัดท้ายหน่วย)</div>
+        <div class="section-body">
+          <ul class="mini"><li>จงเปรียบเทียบ PLC แบบคอมแพกต์กับแบบโมดูลาร์อย่างน้อย 4 ประเด็น</li><li>จงอธิบายหน้าที่ของส่วนประกอบหลัก 6 ส่วนของ PLC</li><li>จงอธิบายความแตกต่างระหว่างหน่วยความจำโปรแกรมกับหน่วยความจำข้อมูล และบอกว่าข้อมูลใดหายเมื่อปิดไฟ</li><li>จงอ่านความหมายของรหัสรุ่น FX5UJ-24MT/ES และ FX5UJ-40MR/ES</li><li>จงเขียนหมายเลขอินพุตทั้งหมดของ FX5UJ-24MT/ES และอธิบายเหตุผลที่ไม่มี X8, X9</li><li>จงวาดวงจรอินพุตแบบ Sink ของปุ่มกดที่ต่อกับ X3 และอธิบายทิศทางการไหลของกระแส</li></ul>
+        </div>
+      </div>
+      <div class="section">
+        <div class="section-header"><span class="icon">🔧</span> 6. เชื่อมโยงกับใบงานปฏิบัติหน่วยเรียนที่ 2</div>
+        <div class="section-body">
+          <p><span class="accent">การเขียนโปรแกรมรับสัญญาณอินพุตและสั่งงานเอาต์พุต (INPUT-OUTPUT แบบที่ 1–3) ด้วยหน้าสัมผัส NO, NC และเอาต์พุตขนาน</span><br>เวลาปฏิบัติ 2 ชั่วโมง · ทำแบบทดสอบหลังเรียนหน่วยที่ 2 หลังทบทวน</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">EN-023-012 โปรแกรมเมเบิล ลอจิก คอนโทรลเลอร์ · อาจารย์ศิวณุ เหล่าบุตรสา · หลักสูตรวิศวกรรมศาสตรบัณฑิต สาขาวิชาวิศวกรรมเครื่องกล มหาวิทยาลัยกาฬสินธุ์ · ภาคการศึกษาที่ 1</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Review Sheet 05 - ไทเมอร์และการควบคุมด้วยเวลา</title>
+<link rel="stylesheet" href="sheet.css">
+</head>
+<body>
+<div class="toolbar"><button onclick="window.print()">🖨️ พิมพ์ / บันทึก PDF</button></div>
+<div class="page">
+
+  <div class="sheet-header">
+    <div>
+      <div class="title">⚙️ Review Sheet หน่วยที่ 5 — ไทเมอร์และการควบคุมด้วยเวลา</div>
+      <div class="sub">EN-023-012 Programmable Logic Controller · Timers and Time-based Control</div>
+    </div>
+    <div class="meta">
+      สัปดาห์ที่ 7 · ท 2 / ป 2 ชม. · CLO1, CLO2, CLO3, CLO4<br>
+      ใบงานปฏิบัติ 1 ใบงาน
+    </div>
+  </div>
+
+  <div class="columns">
+    <div class="col">
+      <div class="section">
+        <div class="section-header"><span class="icon">📌</span> 1. สาระสำคัญ</div>
+        <div class="section-body">
+          <p>งานควบคุมเครื่องจักรจำนวนมากต้องการการหน่วงเวลา เช่น รอให้กระบอกสูบจับชิ้นงานแน่นก่อนเคลื่อนที่ เปิดปั๊มน้ำมันหล่อลื่นก่อนสตาร์ทเครื่อง หรือให้สัญญาณเตือนกะพริบ ไทเมอร์ของ PLC เป็นอุปกรณ์ในหน่วยความจำที่นับเวลาเมื่อเงื่อนไขหน้าคอยล์เป็นจริง และเปลี่ยนสถานะหน้าสัมผัสเมื่อค่าปัจจุบันถึงค่าตั้ง PLC Mitsubishi FX5 มีไทเมอร์แบบหน่วงเวลาทำงาน (T) ซึ่งล้างค่าเมื่อเงื่อนไขหายไป และไทเมอร์แบบสะสม (ST) ซึ่งเก็บค่าเวลาไว้ หน่วยเวลาเริ่มต้น 100 ms ดังนั้นค่าตั้ง K50 เท่ากับ 5 วินาที …</p>
+        </div>
+      </div>
+      <div class="section">
+        <div class="section-header"><span class="icon">🎯</span> 2. จุดประสงค์การเรียน (ทั่วไป)</div>
+        <div class="section-body">
+          <ul class="mini"><li>5.1 อธิบายหลักการทำงานของไทเมอร์และชนิดของไทเมอร์ใน PLC ได้</li><li>5.2 คำนวณค่าตั้งของไทเมอร์และเขียนผังเวลาการทำงานได้</li><li>5.3 เขียนโปรแกรมวงจรหน่วงเวลาทำงาน หน่วงเวลาหยุด พัลส์ และกะพริบได้</li><li>5.4 ประยุกต์ไทเมอร์ร่วมกับวงจรคงสถานะในงานควบคุมเครื่องจักรได้</li></ul>
+        </div>
+      </div>
+      <div class="section">
+        <div class="section-header"><span class="icon">🧩</span> 3. หัวข้อเนื้อหาในหน่วย</div>
+        <div class="section-body">
+          <ul class="mini"><li>5.1 หลักการทำงานของไทเมอร์</li><li>5.2 ชนิดของไทเมอร์ตามพฤติกรรม</li><li>5.3 วงจรไทเมอร์ประยุกต์</li><li>5.4 การเขียนผังเวลาและการตรวจสอบโปรแกรมไทเมอร์</li></ul>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="section">
+        <div class="section-header"><span class="icon">📝</span> 4. บทสรุป</div>
+        <div class="section-body">
+          <p>ไทเมอร์ T ของ FX5: หน่วย 100 ms ไม่สะสม · ST: สะสม ล้างด้วย RST · OUTH = 10 ms, OUTHS = 1 ms K = เวลาที่ต้องการ ÷ หน่วยเวลา เช่น 5 วินาที = K50 On-delay ติดหลังครบเวลา · Off-delay ดับหลังครบเวลา · Pulse ให้พัลส์คงที่ · Retentive สะสมเวลา วงจรประยุกต์: ไทเมอร์ + คงสถานะ, หน่วงเวลาหยุด, กะพริบด้วยไทเมอร์สองตัว, สตาร์ทตามลำดับ ตรวจสอบด้วยผังเวลาและ Watch window ทดสอบทั้งกรณีนานกว่า สั้นกว่า และเริ่มใหม่</p>
+        </div>
+      </div>
+      <div class="section">
+        <div class="section-header"><span class="icon">❓</span> 5. คำถามทบทวน (จากแบบฝึกหัดท้ายหน่วย)</div>
+        <div class="section-body">
+          <ul class="mini"><li>จงอธิบายองค์ประกอบของไทเมอร์ใน PLC และลำดับการทำงานของไทเมอร์แบบหน่วงเวลาทำงาน</li><li>จงคำนวณค่าตั้ง K สำหรับ (ก) 7.5 วินาที หน่วย 100 ms (ข) 0.35 วินาที หน่วย 10 ms (ค) 2 นาที หน่วย 100 ms</li><li>จงเปรียบเทียบไทเมอร์ T กับไทเมอร์ ST เมื่อเงื่อนไขเป็นจริง 3 วินาที หายไป 2 วินาที แล้วเป็นจริงอีก 3 วินาที …</li><li>จงวาดผังเวลาของ X3, ค่าปัจจุบัน T0 และ Y1 ของโปรแกรม LD X3 OUT T0 K30 / LD T0 OUT Y1 เมื่อกด X3 ค้าง 5 …</li><li>จงเขียนโปรแกรมให้กด PBG (X3) ค้าง 3 วินาทีจึงสั่งมอเตอร์ Y6 ทำงานค้าง และหยุดด้วย PBY (X4)</li><li>จงเขียนโปรแกรมหน่วงเวลาหยุดให้พัดลม Y5 ทำงานเมื่อมอเตอร์ Y6 ทำงาน และทำงานต่ออีก 30 วินาทีหลังมอเตอร์หยุด</li></ul>
+        </div>
+      </div>
+      <div class="section">
+        <div class="section-header"><span class="icon">🔧</span> 6. เชื่อมโยงกับใบงานปฏิบัติหน่วยเรียนที่ 5</div>
+        <div class="section-body">
+          <p><span class="accent">การใช้ไทเมอร์ (Timer) หน่วงเวลาทำงาน และการใช้ไทเมอร์ร่วมกับวงจรคงสถานะ</span><br>เวลาปฏิบัติ 2 ชั่วโมง · ทำแบบทดสอบหลังเรียนหน่วยที่ 5 หลังทบทวน</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">EN-023-012 โปรแกรมเมเบิล ลอจิก คอนโทรลเลอร์ · อาจารย์ศิวณุ เหล่าบุตรสา · หลักสูตรวิศวกรรมศาสตรบัณฑิต สาขาวิชาวิศวกรรมเครื่องกล มหาวิทยาลัยกาฬสินธุ์ · ภาคการศึกษาที่ 1</div>
+</div>
+</body>
+</html>

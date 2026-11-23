@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Review Sheet 10 - การออกแบบระบบควบคุมนิวแมติกส์และการควบคุมแบบลำดับด้วยพีแอลซี</title>
+<link rel="stylesheet" href="sheet.css">
+</head>
+<body>
+<div class="toolbar"><button onclick="window.print()">🖨️ พิมพ์ / บันทึก PDF</button></div>
+<div class="page">
+
+  <div class="sheet-header">
+    <div>
+      <div class="title">⚙️ Review Sheet หน่วยที่ 10 — การออกแบบระบบควบคุมนิวแมติกส์และการควบคุมแบบลำดับด้วยพีแอลซี</div>
+      <div class="sub">EN-023-012 Programmable Logic Controller · Electro-Pneumatic System Design and Sequence Control with PLCs</div>
+    </div>
+    <div class="meta">
+      สัปดาห์ที่ 15–16 · ท 4 / ป 4 ชม. · CLO1, CLO2, CLO3, CLO4<br>
+      ใบงานปฏิบัติ 2 ใบงาน
+    </div>
+  </div>
+
+  <div class="columns">
+    <div class="col">
+      <div class="section">
+        <div class="section-header"><span class="icon">📌</span> 1. สาระสำคัญ</div>
+        <div class="section-body">
+          <p>ระบบนิวแมติกส์ไฟฟ้า (Electro-pneumatics) ใช้ลมอัดเป็นต้นกำลังขับกระบอกสูบและหัวดูดสุญญากาศ และใช้ PLC สั่งโซลินอยด์วาล์วตามสัญญาณจากรีดสวิตช์ที่บอกตำแหน่งลูกสูบ จึงเป็นระบบที่พบมากที่สุดในเครื่องจักรอัตโนมัติขนาดเล็กและสายการผลิต การออกแบบระบบควบคุมเริ่มจากวิเคราะห์ลำดับงาน เขียนแผนภาพการเคลื่อนที่ (Displacement–step diagram) และผังลำดับขั้น (Step chart) กำหนดอินพุต/เอาต์พุต แล้วเขียนโปรแกรมด้วยรีเลย์ขั้นที่มีขั้นเดียวทำงานในเวลาหนึ่ง โดยแยกส่วนเงื่อนไขเปลี่ยนขั้นออกจากส่วนเอาต์พุต พร้อมเงื่อนไขเริ่มต้น ปุ่มหยุด …</p>
+        </div>
+      </div>
+      <div class="section">
+        <div class="section-header"><span class="icon">🎯</span> 2. จุดประสงค์การเรียน (ทั่วไป)</div>
+        <div class="section-body">
+          <ul class="mini"><li>10.1 อธิบายส่วนประกอบและสัญลักษณ์ของระบบนิวแมติกส์ไฟฟ้าได้</li><li>10.2 วิเคราะห์ลำดับงานและเขียนแผนภาพการเคลื่อนที่และผังลำดับขั้นได้</li><li>10.3 ออกแบบโปรแกรมควบคุมแบบลำดับด้วยรีเลย์ขั้นได้</li><li>10.4 ประยุกต์ใช้ PLC ออกแบบระบบควบคุมเครื่องจักรกลอัตโนมัติอย่างปลอดภัยได้</li></ul>
+        </div>
+      </div>
+      <div class="section">
+        <div class="section-header"><span class="icon">🧩</span> 3. หัวข้อเนื้อหาในหน่วย</div>
+        <div class="section-body">
+          <ul class="mini"><li>10.1 ระบบนิวแมติกส์ไฟฟ้าในเครื่องจักรอัตโนมัติ</li><li>10.2 อุปกรณ์ในระบบนิวแมติกส์ไฟฟ้า</li><li>10.3 การวิเคราะห์ลำดับงานและการเขียนแผนภาพ</li><li>10.4 การเขียนโปรแกรมควบคุมแบบลำดับด้วยรีเลย์ขั้น</li><li>10.5 กระบวนการออกแบบระบบควบคุมด้วย PLC</li></ul>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="section">
+        <div class="section-header"><span class="icon">📝</span> 4. บทสรุป</div>
+        <div class="section-body">
+          <p>ระบบนิวแมติกส์ไฟฟ้า: FRL → โซลินอยด์วาล์ว → กระบอกสูบ/หัวดูด → รีดสวิตช์ป้อนตำแหน่งกลับ PLC วาล์ว 5/2 ทางโซลินอยด์เดี่ยวกลับตำแหน่งด้วยสปริง ต้อง OUT ค้างไว้ตลอดช่วงที่ต้องการ Pick and Place: A+ B+ (ดูด) B− A− B+ (ปล่อย) B− เขียนเป็นแผนภาพการเคลื่อนที่และผังลำดับขั้น 8 ขั้น รีเลย์ขั้น: SET ขั้นถัดไป RST ขั้นปัจจุบัน และแยกส่วนเอาต์พุตเพื่อไม่ให้เกิด Double coil ความปลอดภัย: ตรวจ HOME ก่อนเริ่ม · STOP/ฉุกเฉิน ZRST · อินเตอร์ล็อกตำแหน่ง · ไทเมอร์เฝ้าเวลา</p>
+        </div>
+      </div>
+      <div class="section">
+        <div class="section-header"><span class="icon">❓</span> 5. คำถามทบทวน (จากแบบฝึกหัดท้ายหน่วย)</div>
+        <div class="section-body">
+          <ul class="mini"><li>จงอธิบายหน้าที่ของอุปกรณ์ในชุด FRL และเหตุผลที่ต้องใช้</li><li>จงอธิบายความหมายของวาล์ว 5/2 ทาง และระบุชื่อช่องต่อทั้ง 5 ช่อง</li><li>จงเปรียบเทียบพฤติกรรมของวาล์วโซลินอยด์เดี่ยวและโซลินอยด์คู่เมื่อเกิดไฟดับ และผลต่อการเขียนโปรแกรม</li><li>กระบอกสูบลูกสูบเส้นผ่านศูนย์กลาง 32 mm ใช้ความดัน 6 bar จงหาแรงดันออกทางทฤษฎี</li><li>จงเขียนแผนภาพการเคลื่อนที่ของลำดับงาน A+ B+ A− B− (A = กระบอกสูบป้อนชิ้นงาน, B = กระบอกสูบกด)</li><li>จากผังลำดับขั้นงาน Pick and Place จงระบุขั้นที่ Y2, Y3 และ Y4 เป็น ON</li></ul>
+        </div>
+      </div>
+      <div class="section warn">
+        <div class="section-header"><span class="icon">⚠️</span> ข้อควรระวังด้านความปลอดภัย (ใบงานปฏิบัติ)</div>
+        <div class="section-body">
+          <ul class="mini"><li>ชี้แจงจุดประสงค์ ข้อควรระวังเรื่องลมอัด และกิจกรรมของหน่วยที่ 10 (2 สัปดาห์)</li></ul>
+        </div>
+      </div>
+      <div class="section">
+        <div class="section-header"><span class="icon">🔧</span> 6. เชื่อมโยงกับใบงานปฏิบัติหน่วยเรียนที่ 10</div>
+        <div class="section-body">
+          <p><span class="accent">การควบคุมกระบอกสูบนิวแมติกส์แบบ MANUAL ผ่าน PLC ด้วยสวิตช์ทางเลือก พร้อมอินเตอร์ล็อกตำแหน่ง / การออกแบบโปรแกรมควบคุมแบบลำดับ (Sequence Control) ด้วยรีเลย์ขั้นสำหรับกระบอกสูบนิวแมติกส์แบบ AUTO (Pick and Place)</span><br>เวลาปฏิบัติ 4 ชั่วโมง · ทำแบบทดสอบหลังเรียนหน่วยที่ 10 หลังทบทวน</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">EN-023-012 โปรแกรมเมเบิล ลอจิก คอนโทรลเลอร์ · อาจารย์ศิวณุ เหล่าบุตรสา · หลักสูตรวิศวกรรมศาสตรบัณฑิต สาขาวิชาวิศวกรรมเครื่องกล มหาวิทยาลัยกาฬสินธุ์ · ภาคการศึกษาที่ 1</div>
+</div>
+</body>
+</html>
